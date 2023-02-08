@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuController, ModalController, NavController, ActionSheetController, LoadingController, Platform, IonInfiniteScroll } from '@ionic/angular';
-import { NavigationExtras } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 //import * as moment from 'moment';
 import { HttpClient } from '@angular/common/http';
@@ -34,6 +34,7 @@ export class HomePage {
     public platform: Platform,
     public menu: MenuController,
     public http: HttpClient,
+    public router: Router
   ) {
   }
   ngOnInit() {
@@ -51,9 +52,16 @@ export class HomePage {
   }
 
   goToPage() {
-
   }
-
+  goFood() {
+    this.router.navigateByUrl('/food')
+  }
+  goShelter() {
+    this.router.navigateByUrl('/shelter')
+  }
+  goDress() {
+    this.router.navigateByUrl('/dress')
+  }
   slideNext(object:any, slideView:any) {
     slideView.slideNext(500).then(() => {
       this.checkIfNavDisabled(object, slideView);

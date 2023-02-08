@@ -52,6 +52,18 @@ const routes: Routes = [
     path: 'contac',
     loadChildren: () => import('./pages/contac/contac.module').then( m => m.ContacPageModule)
   },
+  {
+    path: 'food',
+    loadChildren: () => import('./pages/food/food.module').then( m => m.FoodPageModule)
+  },
+  {
+    path: 'dress',
+    loadChildren: () => import('./pages/dress/dress.module').then( m => m.DressPageModule)
+  },
+  {
+    path: 'shelter',
+    loadChildren: () => import('./pages/shelter/shelter.module').then( m => m.ShelterPageModule)
+  },
 
 
 
