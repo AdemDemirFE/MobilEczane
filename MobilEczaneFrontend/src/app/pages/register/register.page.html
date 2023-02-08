@@ -12,76 +12,26 @@
         <div class="cj-registry">
             <ion-row>
                 <ion-col>
-                    <ion-input type="text" name="name" placeholder="Ad"></ion-input>
+                    <ion-input type="text" name="name" placeholder="Kullanıcı Adı"></ion-input>
                 </ion-col>
             </ion-row>
             <ion-row>
                 <ion-col>
-                    <ion-input type="text" name="lastname" placeholder="Soyad"></ion-input>
+                    <ion-input type="password" placeholder="Şifre" name="password"></ion-input>
                 </ion-col>
             </ion-row>
             <ion-row>
                 <ion-col>
-                    <ion-input type="number" name="identification" placeholder="Kimlik No"></ion-input>
+                    <ion-button color="success" type="submit" expand="block" (click)="register()">
+                        Kayıt Ol
+                    </ion-button>
                 </ion-col>
             </ion-row>
             <ion-row>
                 <ion-col>
-                    <ion-input type="number" name="identification" name="cel" placeholder="Cep telefonu"></ion-input>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-datetime display-format="MMM DD, YYYY HH:mm" name="birthdate"
-                        placeholder="Doğum tarihi"></ion-datetime>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-item class="ion-select">
-                        <ion-label>Cinsiyer</ion-label>
-                        <ion-select placeholder="Seccionar" name="gender">
-                            <ion-select-option value="f">Kadın</ion-select-option>
-                            <ion-select-option value="m">Erkek</ion-select-option>
-                        </ion-select>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-input type="email" placeholder="E-mail" name="email"></ion-input>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-input type="text" placeholder="Adres" name="address"></ion-input>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-item class="ion-select">
-                        <ion-label>Şehir</ion-label>
-                        <ion-select placeholder="Seccionar" name="city">
-                            <ion-select-option value="1">İstanbul</ion-select-option>
-                            <ion-select-option value="2">Ankara</ion-select-option>
-                            <ion-select-option value="3">İzmir</ion-select-option>
-                        </ion-select>
-                    </ion-item>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-input type="password" placeholder="Password" name="password"></ion-input>
-                </ion-col>
-            </ion-row>
-            <ion-row>
-                <ion-col>
-                    <ion-button type="submit" expand="block" fill="outline">Gönder</ion-button>
-                </ion-col>
-            </ion-row>
-            <ion-row padding text-center>
-                <ion-col>
-                    <ion-label routerLink="/login">Gir</ion-label>
+                    <ion-button color="tertiary" type="submit" expand="block" (click)="goLogin()">
+                        Giriş Sayfası
+                    </ion-button>
                 </ion-col>
             </ion-row>
         </div>

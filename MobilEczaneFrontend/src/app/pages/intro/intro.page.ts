@@ -37,7 +37,6 @@ export class IntroPage implements OnInit {
   }
   goLogin() { 
    this.router.navigateByUrl('/login')
-    
   }
   changeLangue() {
     this.navController.navigateForward("/select-lang");
