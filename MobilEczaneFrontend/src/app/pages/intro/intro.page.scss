@@ -1,0 +1,68 @@
+.swiper-slide {
+  display: block;
+}
+
+ion-slide > h2 {
+  margin-top: 2.8rem;
+}
+
+ion-slide > img {
+  max-height: 400px;
+  max-width: 400px;
+  margin: 6px 0;
+  margin-top: -20%;
+}
+
+.intro-header{
+  color: #fff;
+  font-size: 34px;
+  font-family: sans-serif;
+}
+.intro-text{
+  color: #fff;
+  font-size: 24px;
+  font-family: sans-serif;
+  margin-top: 50%;
+}
+.slider-content{
+  display: flex;
+  height: 85%;
+}
+.skip{
+  height: 50px; 
+  background-color: #fff; 
+  color: #FF4D00; 
+  border-radius:8px; 
+  margin-top: 20px; 
+  width: 220px; 
+}
+
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+ion-slides {
+  --bullet-background: #fff;
+  --bullet-background-active:  #fff;
+}
+
+ion-content.background{
+  //--background: url(../../assets/img/select-language-bg.png) 0 0/100% 100% no-repeat;
+  //--background:#FF4D00 ;
+  --background: linear-gradient(to bottom, #e53935 0%, #e35d5b  51%, #e53935  100%);
+
+}
+
+
+@media only screen and (min-width: 480px) {
+  ion-slide > img {
+      max-height: 500px;
+      max-width: 500px;
+      margin: 36px 0;
+      margin-top: -10%;
+  }
+}

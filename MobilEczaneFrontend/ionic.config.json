@@ -1,0 +1,7 @@
+{
+  "name": "MobilEczaneFrontend",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

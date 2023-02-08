@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button class="menuBtn"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title">HOME</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid style="margin-bottom: 5px; margin-top: 5px;">
+    <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+      (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+      <ion-slide style="align-items: center;">
+        <div style="align-items: center;">
+          <ion-card class="haber" button>
+            <div>
+              <ion-img style="width:100% !important; height: 50% !important; " src="assets/img/logo.png"></ion-img>
+            </div>
+            <ion-card class="overlay">
+              <div style="text-align: left;">
+                <h2>
+                  Başlık
+                </h2>
+                <ion-badge style="background-color: #8080806c;">
+                  <h3>
+                    Tarih
+                  </h3>
+                </ion-badge>
+              </div>
+            </ion-card>
+          </ion-card>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-grid>
+
+  <ion-grid style="margin-bottom: 10px;">
+    <ion-row style="padding-top: 7px; padding-bottom: 0px; border-radius: 5px;" class="ion-justify-content-center">
+      <button class="btn-grad">
+        <ion-icon class="buttonIcon" name="home"></ion-icon>
+        <p style="margin-top: 10px;">Menu İsmi</p>
+      </button>
+      <button class="btn-grad">
+        <ion-icon class="buttonIcon" name="home"></ion-icon>
+        <p style="margin-top: 10px;">Menu İsmi</p>
+      </button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

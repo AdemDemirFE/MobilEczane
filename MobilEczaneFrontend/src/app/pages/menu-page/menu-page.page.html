@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button class="menuBtn"></ion-menu-button>
+    </ion-buttons>
+    <ion-row class="userCard">
+      <ion-col size="3">
+        <div class="user-avatar">
+          <img style="height: 60px; width: 60px; margin: 10px; margin-top: 20px; border-radius:50%;"
+            [src]="'./assets/img/profil_avatar.png'">
+        </div>
+      </ion-col>
+      <ion-col size="9" style="margin-top: 20px;">
+        <h2 ion-text class="no-margin bold color:white" style="color: rgb(27, 27, 27);">
+          adem demir
+        </h2>
+        <span style="color: rgb(27, 27, 27);">123</span>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-grid style="margin-bottom: 10px;">
+    <ion-row style="padding-top: 7px; padding-bottom: 0px; border-radius: 5px;"  class="ion-justify-content-center">
+      <ion-list *ngFor="let button of menuButtons">
+        <ion-col>
+          <button (click)="goMenu(button)"
+            style="border-radius: 25px; margin-bottom: 5px; padding: 3px; height: 120px; width: 120px;  background-color: #2b2929; color: white;">
+            <img height="50px" width="50px"
+              style="position: relative; top:5px;  background: transparent !important; padding: 0px; margin: 0px; "
+              src="{{ './assets/icon/'+button.iconPath}}">
+            <p style="margin-top: 15px;"> {{ button.name }}</p>
+          </button>
+        </ion-col>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+
+  
+  
+
+
+</ion-content>

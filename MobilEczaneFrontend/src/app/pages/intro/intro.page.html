@@ -1,0 +1,28 @@
+<ion-content fullscreen padding scroll-y="false" class="background">
+  <ion-slides class="slider-content" pager="true" [options]="slideOptsOne">
+    <ion-slide>
+      <p class="intro-text">Sağlıklı olmak her şeydir, sağlık yoksa hiçbir şey değildir. Öyleyse neden yapmıyoruz</p>
+    </ion-slide>
+
+    <ion-slide>
+      <p class="intro-text">Fiziksel olarak formda ve sağlıklı olmak için her gün 30 dakika vücut geliştirme yapın.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <p class="intro-text">Kötü vücut şekli, zayıf uyku, güç eksikliği, kilo alımı, zayıf kemikler, kolayca travmatize olan vücut, depresif, stresli, zayıf metabolizma, zayıf direnç</p>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <button class="skip" (click)="goLogin()">
+      DEVAM
+    </button>
+  </ion-row>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="changeLangue()"  size="small" style="--background: #00a20e; margin-top: 20px;">
+      <ion-icon name="globe"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+</ion-content>
