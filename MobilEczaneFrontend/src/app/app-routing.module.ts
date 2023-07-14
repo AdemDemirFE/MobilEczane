@@ -64,7 +64,18 @@ const routes: Routes = [
     path: 'shelter',
     loadChildren: () => import('./pages/shelter/shelter.module').then( m => m.ShelterPageModule)
   },
-
+  {
+    path: 'water-balance',
+    loadChildren: () => import('./pages/water-balance/water-balance.module').then(m => m.WaterBalancePageModule)
+  },
+  {
+    path: 'water-modal',
+    loadChildren: () => import('./pages/water-modal/water-modal.module').then(m => m.WaterModalPageModule)
+  },
+  {
+    path: 'water-balance-history',
+    loadChildren: () => import('./pages/water-balance-history/water-balance-history.module').then(m => m.WaterBalanceHistoryPageModule)
+  },
 
 
 

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-title class="title"> {{ 'WATER_BALANCE.ADD_'+type | translate }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="exitModal()">
+        <ion-icon style="color: #ffffff" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+
+  <ion-item *ngIf="type!=0" style="background-color: rgb(252, 239, 223); ">
+    <ion-input style="background-color: rgb(252, 239, 223);" placeholder="{{'WATER_BALANCE.DESC' | translate}}"
+      [(ngModel)]="desc"></ion-input>
+  </ion-item>
+
+  <ion-item style="margin-top: 20px;" (click)="openPicker(2, 100, multiColumnOptions)">
+    <ion-label>{{ 'WATER_BALANCE.FLUID_AMOUNT' | translate }}</ion-label>
+    <ion-input style="text-align: right; font-weight: bold;" readonly [(ngModel)]="value" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item lines="none">
+    <ion-label>{{ 'WATER_BALANCE.DATE_TIME' | translate }}</ion-label>
+    <ion-datetime class="date-picker" displayFormat="HH:mm" [min]="maxDate" [max]="maxDate" [value]="selectDate"
+      cancelText="{{ 'WARNING_.CANCEL' | translate }}" doneText="{{ 'OK' | translate }}"  >
+    </ion-datetime>
+  </ion-item>
+
+
+  <ion-button [disabled]="value=='00'  ? true : false" expand="block" style="margin-left: 10%; margin-right: 10%;"
+    [color]="value=='00' ? 'medium' : 'success'" (click)="closeModal()"><strong style="color: rgb(56, 134, 24);">
+      {{ 'WATER_BALANCE.ADD' | translate }}</strong></ion-button>
+
+
+</ion-content>

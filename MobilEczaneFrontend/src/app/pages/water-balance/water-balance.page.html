@@ -1,0 +1,155 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">{{ 'WATER_BALANCE.HEADER' | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="app-background-color">
+  <ion-row>
+    <ion-col size="6" style="padding: 5px;">
+      <ion-button expand="full" class="headerButton" color="whites" (click)="deleteHistory()">
+        {{ 'WATER_BALANCE.EMPTY_FLASK' | translate }}</ion-button>
+    </ion-col>
+    <ion-col size="6" style="padding: 5px;">
+      <ion-button expand="full" class="headerButton" color="whites" (click)="onTappdeHistory()">
+        {{ 'WATER_BALANCE.HISTORY_BTN' | translate }}</ion-button>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row style="background-color: white; border-radius: 3px; padding-top: 5px; padding-bottom: 5px;">
+    <ion-col size="5">
+      <ion-row style="height: 100%">
+        <ion-col size="6">
+          <img style="width: 60px; height: 100%; margin-top: 10px; margin-left: 10px;" src="./assets/img/water/tup.png">
+          <img [ngStyle]="{'height': height +'%'}"
+            style="width: 40px; position: absolute; left: 22px;bottom: 2%; opacity: 0.6;" src="./assets/img/water/water.png">
+        </ion-col>
+        <ion-col size="6">
+          <img style="width: 60px; height: 100%; margin-top: 10px; margin-left: 10px;" src="./assets/img/water/tup.png">
+          <img [ngStyle]="{'height': height2 +'%'}"
+            style="width: 40px;  position: absolute; left: 22px;bottom: 2%; opacity: 0.6;"
+            src="./assets/img/water/yellow-water.jpg">
+        </ion-col>
+
+      </ion-row>
+    </ion-col>
+    <ion-col size="7">
+
+      <label style="color:black; font-size: 15px; font-weight: bold;">
+        {{ 'WATER_BALANCE.QUICK_INPUT' | translate }} </label>
+      <ion-row>
+        <ion-col (click)="addItem(glassWater)" size="5" style="background-color: #CBE4FF !important; padding: 0px; ">
+          <ion-card style="margin: 0px; padding: 0px;">
+            <ion-card-header
+              style="background-color: #CBE4FF !important; height: 70px; padding: 2px !important;  text-align: center !important; color: black !important;">
+              {{ 'WATER_BALANCE.GLASS_OF_WATER' | translate }}
+            </ion-card-header>
+
+            <ion-card-content style="margin: 0px; padding: 0px; background-color: #CBE4FF !important;">
+              <div style="position: relative;height: 30px; text-align: center; padding: 0px; margin: 0px;"><img
+                  style="width:30px; height: 30px; " src="./assets/img/water/glass.png"> </div>
+              <h4
+                style=" position: relative;   text-align: center;color:black; background-color: white ;font-size: 14px; font-weight: bold; padding: 3px; border-radius: 5px;">
+                +{{glassWater.varsayilanDegeri}}</h4>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+        <ion-col (click)="addItem(cupTea,'CUP_OF_TEA')" size="5"
+          style="background-color: #FFD1DC !important;  padding: 0px;">
+          <ion-card style="margin: 0px; padding: 0px;">
+            <ion-card-header
+              style="background-color: #FFD1DC !important; height: 70px; padding: 2px !important; text-align: center !important; color: black !important;">
+              {{ 'WATER_BALANCE.CUP_OF_TEA' | translate }} </ion-card-header>
+
+            <ion-card-content style="margin: 0px; padding: 0px; background-color: #FFD1DC !important;">
+              <div style="height: 30px; text-align: center; padding: 0px; margin: 0px;"><img
+                  style="width:30px; height: 30px; " src="./assets/img/water/cup.png"> </div>
+              <h4
+                style=" text-align: center;color:black; background-color: white ;font-size: 14px; font-weight: bold; padding: 3px; border-radius: 5px;">
+
+                +{{cupTea.varsayilanDegeri}}
+              </h4>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row style="margin-top: 10px;">
+        <ion-col (click)="addItem(glassWater)" size="5" style="background-color: #FFE1D0 !important; padding: 0px; ">
+          <ion-card style="margin: 0px; padding: 0px;">
+            <ion-card-header
+              style="background-color: #FFE1D0 !important; height: 70px; padding: 2px !important;  text-align: center !important; color: black !important;">
+              {{ 'WATER_BALANCE.PLATE_SOUP' | translate }}
+            </ion-card-header>
+
+            <ion-card-content style="margin: 0px; padding: 0px; background-color: #FFE1D0 !important;">
+              <div style="height: 30px;text-align: center; padding: 0px; margin: 0px;"><img
+                  style="width:30px; height: 30px; " src="./assets/img/water/soup.png"> </div>
+              <h4
+                style="text-align: center;color:black; background-color: white ;font-size: 14px; font-weight: bold; padding: 3px; border-radius: 5px;">
+                +{{soup.varsayilanDegeri}}</h4>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col size="1"></ion-col>
+        <ion-col (click)="addItem(cupTea,'CUP_OF_TEA')" size="5"
+          style="background-color: #FFF1CD !important;  padding: 0px;">
+          <ion-card style="margin: 0px; padding: 0px;">
+            <ion-card-header
+              style="background-color: #FFF1CD !important; height: 70px; padding: 2px !important;  text-align: center !important; color: black !important;">
+              {{ 'WATER_BALANCE.PLATE_CANTEEN' | translate }}</ion-card-header>
+
+            <ion-card-content style="margin: 0px; padding: 0px; background-color: #FFF1CD !important;">
+              <div style="height: 30px;text-align: center; padding: 0px; margin: 0px;"><img
+                  style="width:30px; height: 30px; " src="./assets/img/water/soup.png"> </div>
+              <h4
+                style="text-align: center;color:black; background-color: white ;font-size: 14px; font-weight: bold; padding: 3px; border-radius: 5px;">
+                +{{soupOther.varsayilanDegeri}}</h4>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+    </ion-col>
+  </ion-row>
+
+
+  <ion-row style="margin-top: 5px;">
+    <ion-col size="6">
+      <ion-card style="margin: 0px; padding: 0px;">
+        <ion-card-header style="background-color: white; height: 70px;">
+          <ion-row>
+            <ion-col size="8">{{ 'WATER_BALANCE.INTRODUCED' | translate }}</ion-col>
+            <ion-col size="4"> <span style="font-weight: bold; color: black;"> {{valueIn}}</span>
+              {{ 'WATER_BALANCE.UNIT' | translate }}</ion-col>
+          </ion-row>
+        </ion-card-header>
+
+        <ion-card-content style="margin: 0px; padding: 0px;">
+          <ion-button expand="full" color="secondary" (click)="presentModal(1)"><strong
+              style="color: rgb(73, 131, 240);"> {{ 'WATER_BALANCE.ADD' | translate }}</strong></ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6">
+      <ion-card style="margin: 0px; padding: 0px;">
+        <ion-card-header style="background-color: white;  height: 70px;">
+          <ion-row>
+            <ion-col size="8">{{ 'WATER_BALANCE.WITHDRAWN' | translate }}</ion-col>
+            <ion-col size="4"><span style="font-weight: bold; color: black;"> {{valueOut}}</span>
+              {{ 'WATER_BALANCE.UNIT' | translate }}</ion-col>
+          </ion-row>
+        </ion-card-header>
+
+        <ion-card-content style="margin: 0px; padding: 0px;">
+          <ion-button expand="full" color="warning" (click)="presentModal(0)"><strong style="color: chocolate;">
+              {{ 'WATER_BALANCE.ADD' | translate }}</strong> </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
