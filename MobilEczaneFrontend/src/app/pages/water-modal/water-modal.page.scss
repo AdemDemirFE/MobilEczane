@@ -1,0 +1,49 @@
+
+.container{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-header{
+    font-size: 20px; font-weight: bold;
+}
+
+.text-subTitle{
+    font-size: 14px; color: #B4BCBA; margin-top: 10px;
+}
+
+.input{
+    min-height: 200px;
+    height: 300px;
+    max-height: 600px;
+    width: 100%;
+    border-radius: 5px;
+    border-style: solid; border-width: 1px; border-color: #B4BCBA;
+    margin-top: 10px ;
+    align-items: self-start;
+}
+
+.cancel-button{
+    width: 40%;
+    height: 70px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #C5C7C9;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.line{
+    height: 1px; width: 100%; background-color:#EAEAEA ; margin-top: 20px;
+}
+
+.inputArea{
+    border-radius: 5px;
+    border-style: solid; border-width: 1px; border-color: #EAEAEA;
+  
+}
+
+

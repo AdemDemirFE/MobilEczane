@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar class="toolbar">
+    <ion-buttons slot="start">
+      <ion-button size="large" shape="round" (click)="backButtonTapped()">
+        <ion-icon class="back-button" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="title">{{ 'WATER_BALANCE.HISTORY' | translate }}</ion-title>
+  </ion-toolbar>
+  <ion-datetime #myPicker style="color: white; text-align: center; padding: 2px;" [value]="startDate"
+    cancelText="{{ 'WARNING_.CANCEL' | translate }}" doneText="{{ 'OK' | translate }}" [max]="maxDate" min="2020"
+    (ionChange)="updateDate(myPicker.value)" class="date-picker" displayFormat="DD/MM/YYYY">
+  </ion-datetime>
+</ion-header>
+
+<ion-content class="app-background-color">
+  <ion-list style="background-color: white;" show-delete="true" side="right">
+    <ion-item-sliding *ngFor="let item of dataList; let i=index;">
+      <ion-item [ngStyle]="{'color': item.tipi==0 ? '#edc768' :'black'}" style="padding: 0px;">
+        <ion-label style="font-size: medium; font-weight: bold;">
+          <ion-row>
+            <ion-col size="8">
+              <span
+                style="font-size: medium; white-space: normal;">{{ (item.siviTipiId !=null ? 'WATER_BALANCE.'+item.siviKod : item.siviAdi )  | translate }}</span>
+            </ion-col>
+            <ion-col size="2">
+              {{item.degeri}}
+            </ion-col>
+            <ion-col size="2" style="color:gray">
+              {{moment(item.olusturmaTarihi).format('HH:ss') }}
+            </ion-col>
+          </ion-row>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="delete(item)">{{ 'GENERAL.DELETE' | translate }}
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-content>

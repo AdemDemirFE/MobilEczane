@@ -62,6 +62,10 @@ export class HomePage {
   goDress() {
     this.router.navigateByUrl('/dress')
   }
+
+  goWater() {
+    this.router.navigateByUrl('/water-balance')
+  }
   slideNext(object:any, slideView:any) {
     slideView.slideNext(500).then(() => {
       this.checkIfNavDisabled(object, slideView);
